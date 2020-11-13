@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけん大会</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+    <div class="title_part">
+        <h1 class="title">Janken Game!!</h1>
+        <p class="subtitle">Very simple Janken Game for kids</p>
+    </div>
+
+    <h1>Choose your hand from the three</h1>
+    <div class="handspics">
+        <div id="goo"><img src="./img/goo.png" alt=""></div>
+        <div id="choki"><img src="./img/choki.png" alt=""></div>
+        <div id="pa"><img src="./img/pa.png" alt=""></div>
+    </div>
+
+    <h1>Show computer hand below</h1>
+    <div id="computer_hand"></div>
+
+    <h1>Your result is here</h1>
+    <div id="result"></div>
+    
+    <a href="#" class="btn-sticky">Go up and try again</a>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+         
+      
+        // from here in case of goo
+
+        $("#goo").on('click',function(){
+            var myhandnumber;
+            myhandnumber=0;
+            console.log(myhandnumber);
+                   
+            var num=Math.floor(Math.random()*3);
+
+            if(num==0){
+                $("#computer_hand").html("goo!")
+                };
+                if(num==1){
+                    $("#computer_hand").html("choki!")
+                };
+                if(num==2){
+                    $("#computer_hand").html("pa!")}
+            
+            var result_show = myhandnumber-num;
+            
+            if (result_show==0){
+                target=document.getElementById('result').innerHTML = "Even";
+                } 
+
+                else if(result_show==-1){
+                    document.getElementById('result').innerHTML = "Win" 
+                } 
+                else if(result_show==-2){
+                    document.getElementById('result').innerHTML = "Lose"
+                }
+            });
+
+            // from here in case of choki
+
+            $("#choki").on('click',function(){
+            var myhandnumber;
+            myhandnumber=1;
+            console.log(myhandnumber);
+            
+            var num=Math.floor(Math.random()*3);
+
+            if(num==0){
+                $("#computer_hand").html("goo!")
+                };
+                if(num==1){
+                    $("#computer_hand").html("choki!")
+                };
+                if(num==2){
+                    $("#computer_hand").html("pa!")}
+            
+            var result_show = myhandnumber-num;
+            
+            if (result_show==1){
+                document.getElementById('result').innerHTML = "Lose" } 
+                else if(result_show==0){
+                    document.getElementById('result').innerHTML = "Even" 
+                } 
+                else if(result_show==-1){
+                    document.getElementById('result').innerHTML = "Win"
+                }
+            });
+            
+            // from here in case of pa
+
+            $("#pa").on('click',function(){
+            var myhandnumber;
+            myhandnumber=2;
+            console.log(myhandnumber);
+            
+            var num=Math.floor(Math.random()*3);
+
+            if(num==0){
+                $("#computer_hand").html("goo!")
+                };
+                if(num==1){
+                    $("#computer_hand").html("choki!")
+                };
+                if(num==2){
+                    $("#computer_hand").html("pa!")}
+            
+            var result_show = myhandnumber-num;
+            
+            if (result_show==2){
+                document.getElementById('result').innerHTML = "Win" } 
+                else if(result_show==1){
+                    document.getElementById('result').innerHTML = "Lose" 
+                } 
+                else if(result_show==0){
+                    document.getElementById('result').innerHTML = "Even"
+                }
+            });
+
+        // blow do not touch
+    //   var num=Math.floor(Math.random()*3)
+
+    //   $("#goo").on('click',function(){
+    //   if(num==0){
+    //       $("#computer_hand").html("goo!")
+    //       };
+    //     if(num==1){
+    //         $("#computer_hand").html("choki!")
+    //       };
+    //     if(num==2){
+    //         $("#computer_hand").html("pa!")
+    //       }});
+     
+    //  // above do not touch  
+
+    //     var result_show = myhandnumber+num;
+    //     console.log(result_show)
+
+
+    </script>
+</body>
+</html>
